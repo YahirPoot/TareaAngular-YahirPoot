@@ -3,9 +3,19 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-tour-of-hero": {
+    "angular-tour-of-heroes": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "standalone": false
+        },
+        "@schematics/angular:directive": {
+          "standalone": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/angular-tour-of-hero",
+            "outputPath": "dist/angular-tour-of-heroes",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -27,12 +37,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -62,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-tour-of-hero:build:production"
+              "buildTarget": "angular-tour-of-heroes:build:production"
             },
             "development": {
-              "buildTarget": "angular-tour-of-hero:build:development"
+              "buildTarget": "angular-tour-of-heroes:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "angular-tour-of-hero:build"
+            "buildTarget": "angular-tour-of-heroes:build"
           }
         },
         "test": {
@@ -96,5 +101,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "63fe3315-c8aa-4d2c-98c4-593ddc0d6430"
   }
 }
