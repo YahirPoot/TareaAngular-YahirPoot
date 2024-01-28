@@ -1,8 +1,8 @@
 /* DashboardComponent's private CSS styles */
 [class*='col-'] {
     float: left;
-    padding-right: 20px;
-    padding-bottom: 20px;
+    padding-right: 1%;
+    padding-bottom: 10px;
 }
 [class*='col-']:last-of-type {
     padding-right: 0;
@@ -29,33 +29,37 @@ h4 {
     width: 25%;
 }
 .module {
+    margin: 0 auto;
     padding: 20px;
     text-align: center;
     color: #eee;
     max-height: 120px;
-    min-width: 120px;
-    background-color: #3f525c;
-    border-radius: 2px;
+    max-width: 150px;
+    background-color: #3f96ed;
+    border-radius: .5rem;
+    transition: transform 0.3s ease; /* Añadida la propiedad de transición a transform */
 }
 .module:hover {
-    background-color: #eee;
+    transform: scale(1.1); /* Hace más grande el módulo al pasar el mouse sobre él */
+    background-color: #607d8b;
     cursor: pointer;
-    color: #607d8b;
+    color: #eee;
 }
 .grid-pad {
     padding: 10px 0;
 }
 .grid-pad > [class*='col-']:last-of-type {
-    padding-right: 20px;
+    padding-right: 30px;
 }
 @media (max-width: 600px) {
     .module {
-        font-size: 10px;
-        max-height: 75px; }
+        font-size: 15px;
+        max-height: 5px;
+    }
 }
 @media (max-width: 1024px) {
     .grid {
-    margin: 0;
+        margin: 0;
     }
     .module {
         min-width: 60px;
